@@ -51,3 +51,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.3'
 gem 'administrate', '~> 0.8.1'
+gem 'petergate', '~> 1.8'
+
