@@ -10,30 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20171110195915) do
-
+ActiveRecord::Schema.define(version: 20171110214258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "student_data", force: :cascade do |t|
-    t.string "languages"
-    t.float "hourly_rate"
-    t.integer "active"
-    t.integer "position_wanted"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "github_username"
-    t.bigint "student_id"
-    t.text "description"
-    t.string "tagline"
-    t.index ["student_id"], name: "index_student_data_on_student_id"
-  end
-
   create_table "students", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "active"
+    t.float "pay"
+    t.string "descrption"
+    t.string "languages"
+    t.string "github_name"
+    t.string "phone"
+    t.string "position"
+    t.string "roles"
+    t.string "portfolio_url"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "tagline"
+    t.index ["email"], name: "index_students_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,5 +66,4 @@ ActiveRecord::Schema.define(version: 20171110195915) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "student_data", "students"
 end
