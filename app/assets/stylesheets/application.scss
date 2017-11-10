@@ -9,6 +9,21 @@ body {
   padding: 30px;
 }
 
-.align-center {
-  align-items: center;
+.btnpadding {
+  margin-left: 40%;
+  background-color: #3ae39f;
+}
+
+.login-scss {
+	color: black;
+	margin-left: 37%;
+}
+
+.login-scss:hover {
+	text-decoration: none;
+	color: #3ae39f;
+}
+
+.signup {
+	text-align: center;
 }
