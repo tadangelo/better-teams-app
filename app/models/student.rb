@@ -1,3 +1,3 @@
-class Student < User
- has_many :student_datum, optional: true
-end  
+class Student < ApplicationRecord
+  has_many :student_datum, optional: true
+end
