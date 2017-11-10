@@ -212,3 +212,14 @@ height: 120px;
     left: -78px;
   }
 }
+
+.list {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
